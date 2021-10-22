@@ -7,10 +7,8 @@ public class Players {
 
     private int numTrophies;
 
-    public Players(String psnID, int numPlats, int numTrophies) {
+    public Players(String psnID) {
         this.psnID = psnID;
-        this.numPlats = numPlats;
-        this.numTrophies = numTrophies;
     }
 
     public String getPsnID() {
