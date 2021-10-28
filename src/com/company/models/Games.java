@@ -2,6 +2,7 @@ package com.company.models;
 
 public class Games {
 
+    private int id;
     private String title;
     private String genre;
     private String dateCompleted;
@@ -10,7 +11,7 @@ public class Games {
     public int numBronze;
 
 
-    public Games(String title, String genre, String dateCompleted, int numGold, int numSilver, int numBronze) {
+    public Games(int id, String title, String genre, String dateCompleted, int numGold, int numSilver, int numBronze) {
         this.title = title;
         this.genre = genre;
         this.dateCompleted = dateCompleted;
@@ -65,5 +66,10 @@ public class Games {
 
     public void setNumBronze(int numBronze) {
         this.numBronze = numBronze;
+    }
+
+    @Override
+    public String toString(){
+        return title + " " + genre + " " + dateCompleted + " " + numGold + " " + numSilver + " " + numBronze;
     }
 }
