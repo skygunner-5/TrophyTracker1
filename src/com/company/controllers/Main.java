@@ -22,15 +22,17 @@ public class Main {
         db.addTables();
 
         while(view.isAddGames()){
-            db.addData();
-            if(view.shouldAddMovies())
+            if(view.shouldAddMovies()) {
                 view.setAddGames(true);
+                db.addData();
+            }
             else
                 view.setAddGames(false);
         }
 
         ArrayList<Games> theGames = db.getData();
         player.setNumPlats(theGames.size());
+        view.displayLabels(player);
         int totalTrophies;
         for(Games game : theGames){
             totalTrophies = (game.getNumGold() + game.getNumSilver() + game.getNumBronze());

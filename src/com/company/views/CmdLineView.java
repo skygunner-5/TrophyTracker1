@@ -1,12 +1,12 @@
 package com.company.views;
 
 import com.company.models.Games;
+import com.company.models.Players;
 
 import java.util.Scanner;
 
 public class CmdLineView {
     private String psnID;
-
     private boolean addGames;
 
     public CmdLineView(boolean addGames) { this.addGames = addGames;}
@@ -93,6 +93,11 @@ public class CmdLineView {
         }
         int numBronze = input.nextInt();
         return numBronze;
+    }
+
+    public void displayLabels(Players player){
+        System.out.println("Hello " + player.getPsnID() + " you have " + player.getNumPlats() + " platinum trophies.\n");
+        System.out.println("Title Genre Date Completed Num Gold Num Silver Num Bronze\n");
     }
 
     public boolean isAddGames() {
